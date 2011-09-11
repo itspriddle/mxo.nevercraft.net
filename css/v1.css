@@ -1,0 +1,180 @@
+body {
+	background-color: #000000;
+	text-align: left;
+
+}
+body,td,th {
+	font-family: Trebuchet MS, Verdana, Arial, sans-serif;
+	font-size: 11px;
+}
+hr {
+	color: #506175;
+}
+.padded_lr {
+	padding-left: 4px;
+	padding-right: 4px;
+}
+a:link {
+	color: #506175;
+	text-decoration: underline;
+}
+a:visited {
+	text-decoration: underline;
+	color: #506175;
+}
+a:hover {
+	text-decoration: none;
+	color: #506175;
+}
+a:active {
+	text-decoration: underline;
+	color: #506175;
+}
+#overallcont {
+	text-align: left;
+	width: 780px;
+}
+#top {
+	width: 780px;
+	height: 30px;
+	background-image: url(/images/gui/v1.body.top.gif);
+	background-position: bottom;
+	background-repeat: no-repeat;
+}
+#bottom {
+	width: 780px;
+	height: 30px;
+	background-image: url(/images/gui/v1.body.bot.gif);
+	background-position: top;
+	background-repeat: no-repeat;
+}
+#bodycont {
+	width: 780px;
+	background-image: url(/images/gui/v1.body.bg.gif);
+	background-repeat: repeat-y;
+}
+#body {
+	width: 723px;
+	position: relative;
+	left: 30px;
+}
+#banner {
+	width: 497px;
+	height: 99px;
+	background-image: url(/images/gui/v1.banner.gif);
+	float: left;
+}
+#banner span {
+	visibility: hidden;
+}
+#navcont {
+	width: 226px;
+	height: 99px;
+	float: right;
+}
+#navcont .left {
+	float: left;
+	width: 108px;
+	vertical-align: top;
+	position: relative;
+	left: 4px;
+}
+#navcont .right {
+	float: right;
+	width: 108px;
+	vertical-align: top;
+}
+#navcont .breadcrumb {
+	clear: both;
+	color: #FFFFFF;
+	position: relative;
+	left: 4px;
+	top: 1px;
+	text-align: center;
+	font-size: 9px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+#navcont span {
+	visibility: hidden;
+}
+#navcont .home, #navcont .members, #navcont .forum, #navcont .resources, #navcont .contact, #navcont .links {
+	width: 108px;
+	height: 25px;
+	border-bottom: 3px solid #000000;
+}
+#navcont a {
+	display: block;
+	height: 25px;
+	width: 108px;
+	text-decoration: none;
+}
+#navcont .home a:link, #navcont .home a:visited, #navcont .home a:active {
+	background-image: url(/images/gui/v1.homeup.gif);
+}
+#navcont .home a:hover {
+	background-image: url(/images/gui/v1.homedown.gif);
+}
+#navcont .members a:link, #navcont .members a:visited, #navcont .members a:active {
+	background-image: url(/images/gui/v1.membersup.gif);
+}
+#navcont .members a:hover {
+	background-image: url(/images/gui/v1.membersdown.gif);
+}
+#navcont .forum a:link, #navcont .forum a:visited, #navcont .forum a:active {
+	background-image: url(/images/gui/v1.forumup.gif);
+}
+#navcont .forum a:hover {
+	background-image: url(/images/gui/v1.forumdown.gif);
+}
+#navcont .resources a:link, #navcont .resources a:visited, #navcont .resources a:active {
+	background-image: url(/images/gui/v1.resourcesup.gif);
+}
+#navcont .resources a:hover {
+	background-image: url(/images/gui/v1.resourcesdown.gif);
+}
+#navcont .links a:link, #navcont .links a:visited, #navcont .links a:active {
+	background-image: url(/images/gui/v1.linksup.gif);
+}
+#navcont .links a:hover {
+	background-image: url(/images/gui/v1.linksdown.gif);
+}
+#navcont .contact a:link, #navcont .contact a:visited, #navcont .contact a:active {
+	background-image: url(/images/gui/v1.contactup.gif);
+}
+#navcont .contact a:hover {
+	background-image: url(/images/gui/v1.contactdown.gif);
+}
+#bodycontent {
+	background-color: #607892;
+	border-top: 4px solid #000000;
+	padding: 13px;
+	vertical-align: top;
+	clear: both;
+}
+
+
+.hdiv6px {
+	height: 6px;
+	font-size: 1px;
+	line-height: 6px;
+	max-height: 6px;
+}
+
+.clear {
+	clear: both;
+}
+
+input, submit, select, textarea, browse {
+	background-color: #B5C0CE;
+	border: 1px solid #506175;
+	font-family: Trebuchet MS, Verdana, Arial, sans-serif;
+	font-size: 11px;
+	color: #506175;
+}
+/*submit, select {
+	width: 150px;
+}
+input, textarea {
+	padding: 3px;
+	width: 150px;
+}*/

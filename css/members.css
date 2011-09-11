@@ -1,0 +1,148 @@
+#members {
+	width: 680px;
+	position: relative;
+	left: 15px;
+	color: #506175;
+}
+#members .title {
+	font-size: 22px;
+	text-transform: capitalize;
+	color: #516276;
+}
+#members .header {
+	width: 680px;
+	height: 42px;
+	background-image: url(/images/gui/v1.members.head.gif);
+	vertical-align: top;
+	
+}
+#members .topnav {
+	float: right;
+	font-size: 11px;
+	line-height: 22px;
+	margin-right: 3px;
+	font-weight: bold;
+}
+
+#members .topnav a:link, #members .topnav a:visited, #members .topnav a:active {
+	color: #516276;
+	text-decoration: none;
+}
+#members .topnav a:hover {
+	color: #516276;
+	text-decoration: underline;
+}
+
+
+#members .body {
+	width: 680px;
+	background-image: url(/images/gui/v1.members.bg.gif);
+	background-position: center;
+	background-repeat: repeat-y;
+	
+}
+#members .left {
+	width: 185px;
+	float: left;
+	position: relative;
+	top: 10px;
+	left: 10px;
+}
+#members .right {
+	width: 450px;
+	float: right;
+	position: relative;
+	bottom: 10px;
+}
+#members .content {
+	width: 680px;
+	overflow: visible;
+	
+}
+
+#members .top, #members .bottom {
+	width: 680px;
+	height: 12px;
+	font-size: 1px;
+	background-repeat: no-repeat;
+}
+
+#members .top {
+	background-image: url(/images/gui/v1.members.top.gif);
+	background-position: bottom;
+}
+#members .bottom {
+	background-image: url(/images/gui/v1.members.bot.gif);
+	background-position: top;
+	border-top: 1px solid #516276;
+}
+#members .avatar, #users .avatar {
+	width: 185px;
+	height: 138px;
+	background-image: url(/images/gui/v1.users.avatar.blank.gif);
+	background-repeat: no-repeat;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+#members .bio, #users .bio {
+	font-size: 11px;
+	
+}
+
+#members .bio a:link, #members .bio a:visited {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+#members .bio a:active, #members .bio a:hover {
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+#members .bioright, #users .bioright {
+	float: right;
+	width: 66%;
+	color: #DADDEB;
+}
+
+#members .bioleft, #users .bioleft {
+	float: left;
+	width: 33%;
+	color: #DADDEB;
+	font-weight: bold;
+}
+#members .bioentry {
+	width: 100%;
+	background-color: #607892;
+	border-bottom: 3px solid #DADDEB;
+	color: #FFFFFF;
+	padding: 0px, 3px, 0px, 3px;
+}
+#members .bioentrylng {
+	width: 100%;
+	background-color: #607892;
+	border-bottom: 3px solid #DADDEB;
+	color: #FFFFFF;
+	clear: both;
+}
+#gallery {
+	width: 400px;
+	vertical-align: top;
+	clear: none;
+}
+#gallery .col1 {
+	width: 150px;
+	clear: right;
+	float: left;
+}
+#gallery .col2 {
+	width: 150px;
+	clear: both;
+}
+#gallery .col3 {
+	width: 100px;
+	clear: right;
+	float: right;
+}
+ .thumb {
+	width: 100;
+	clear: none;
+}

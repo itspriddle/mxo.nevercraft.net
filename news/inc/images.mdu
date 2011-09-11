@@ -1,0 +1,354 @@
+<?PHP
+
+if($member_db[1] > 3 or ($member_db[1] != 1 and $action == "doimagedelete")){ msg("error", "Access Denied", "You don't have permission to manage images"); }
+
+
+
+$allowed_extensions = array("gif", "jpg", "png", "bmp", "jpe", "jpeg");
+
+
+
+
+
+// ********************************************************************************
+
+// Show Images List
+
+// ********************************************************************************
+
+if($action != "doimagedelete")
+
+{
+
+        if($action == "quick")
+
+    {
+
+            echo"<html>
+
+                        <head>
+
+                        <title>Insert Image</title>
+
+                        <style type=\"text/css\">
+
+                        <!--
+
+                        select, option, textarea, input {
+
+                         BORDER: #808080 1px solid;
+
+                         COLOR: #000000;
+
+                         FONT-SIZE: 11px;
+
+                         FONT-FAMILY: Verdana; BACKGROUND-COLOR: #ffffff
+
+                        }
+
+                        BODY, TD {text-decoration: none; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt;}
+
+            a:active,a:visited,a:link {font-size : 10px; color: #808080; font-family: verdana; text-decoration: none;}
+
+                        a:hover {font-size : 10px; color: #000000; font-family: verdana; text-decoration: none; }
+
+            .panel                { border: 1px dotted silver; background-color: #F7F6F4;}
+
+                        -->
+
+                        </style>
+
+                        </head>
+
+                        <body bgcolor=#FFFFFF>
+
+                        <script language=\"javascript\" type=\"text/javascript\">
+
+                        <!--
+
+                        function insertimage(text) {
+
+                                text = ' ' + text + ' ';
+
+                                opener.document.forms['addnews'].$area.focus();
+
+                                opener.document.forms['addnews'].$area.value  += text;
+
+                                opener.document.forms['addnews'].$area.focus();
+
+                                     window.close();
+
+                        }
+
+                        //-->
+
+                        </script>";
+
+    }else{ echoheader("images","Manage Images"); }
+
+
+
+        if($subaction == "upload")
+
+        {
+
+        if(!$image){ $image = $HTTP_POST_FILES['image']['tmp_name']; }
+
+        if(!$image_name){ $image_name = $HTTP_POST_FILES['image']['name']; }
+
+        $image_name = str_replace(" ", "_", $image_name);
+
+
+
+        $img_name_arr = explode(".",$image_name);
+
+            $type                  = end($img_name_arr);
+
+
+
+            if($image_name == ""){ $img_result = "<br><font color=red>No File Specified For Upload !!!</font>"; }
+
+            elseif( !isset($overwrite) and file_exists($config_path_image_upload."/".$image_name)){ $img_result = "<br><font color=red>Image already exist !!!</font>";}
+
+            elseif( !(in_array($type, $allowed_extensions) or in_array(strtolower($type), $allowed_extensions)) ){
+
+                $img_result = "<br><font color=red>This type of file is not allowed !!!</font>";
+
+        }
+
+            else
+
+            {
+
+                    @copy($image, $config_path_image_upload."/".$image_name) or $img_result = "<font color=red>Couldn't copy image to server</font><br />Check if file_uploads is allowed in the php.ini file of your server";
+
+                        if(file_exists($config_path_image_upload."/".$image_name))
+
+                {
+
+                                $img_result = "<br><font color=green>Image was uploaded</font>";
+                                if($action == "quick"){
+                                  $img_result .= "  <a title=\"Inser this image in the $my_area\" href=\"javascript:insertimage('&lt;img style=&quot;border: none;&quot; alt=&quot;&quot; src=&quot;$config_http_script_dir/data/upimages/$image_name&quot; /&gt;')\">[insert it]</a>";
+                                }
+                        }//if file is uploaded succesfully
+
+            }
+
+        }
+
+
+
+    echo"<table border=0 cellpading=0 cellspacing=0  width=100%>
+
+    <FORM action='$PHP_SELF?mod=images' METHOD='POST' ENCTYPE=\"multipart/form-data\">
+
+           <input type=hidden name=subaction value=upload>
+
+        <input type=hidden name=area value='$area'>
+
+    <input type=hidden name=action value='$action'>
+
+    <td height=33>
+
+    <b>Upload Image</b>
+
+<table border=0 cellpading=0 cellspacing=0 class=\"panel\" cellpadding=8>
+
+    <tr>
+
+    <td height=25>
+
+    <input type=file name=image size=23>&nbsp;&nbsp; <input type=submit value='Upload'><br>
+    <input type=checkbox name=overwrite value=1> Overwrite if exist?
+
+    <b>$img_result</b></tr>
+
+    </form>
+
+    </table>
+
+    <tr>
+
+        <td height=11>
+
+        <img height=20 border=0 src=\"skins/images/blank.gif\" width=1>
+
+    </tr><tr>
+
+        <td height=14>
+
+    <b>Uploaded Images</b>
+
+    </tr>
+
+    <tr>
+
+        <td height=1>
+<FORM action='$PHP_SELF?mod=images' METHOD='POST'>
+  <table width=100% height=100% cellspacing=0 cellpadding=0>";
+
+
+
+        $img_dir = opendir($config_path_image_upload);
+
+
+
+        $i = 0;
+
+    while ($file = readdir($img_dir))
+    {
+         //Yes we'll store them in array for sorting
+         $images_in_dir[] = $file;
+    }
+    natcasesort($images_in_dir);
+    reset($images_in_dir);
+    foreach ($images_in_dir as $file) {
+
+
+
+
+        $img_name_arr = explode(".",$file);
+            $img_type          = end($img_name_arr);
+
+
+                if ( (in_array($img_type, $allowed_extensions) or in_array(strtolower($img_type), $allowed_extensions)) and $file != ".." and $file != "." and is_file($config_path_image_upload."/".$file))
+
+            {
+
+            $i++;
+
+            $this_size =  filesize($config_path_image_upload."/".$file);
+
+                $total_size += $this_size;
+
+            $img_info = getimagesize($config_path_image_upload."/".$file);
+
+            if( $i%2 != 0 ){ $bg = "bgcolor=#F7F6F4"; }
+
+                    else{ $bg = ""; }
+
+
+
+            if($action == "quick")
+
+            {
+
+                $my_area = str_replace("_", " ", $area);
+
+                echo"
+
+                <tr $bg><td height=16>
+
+                            &nbsp;
+
+                            <td height=16 width=57%>
+
+                <a title=\"Inser this image in the $my_area\" href=\"javascript:insertimage('&lt;img style=&quot;border: none;&quot; alt=&quot;&quot; src=&quot;$config_http_script_dir/data/upimages/$file&quot; /&gt;')\">$file</a>
+
+
+
+                <td height=16 align=right>
+
+                            $img_info[0]x$img_info[1]
+
+
+
+                            <td height=16 align=right>
+
+                        &nbsp;". formatsize($this_size) ."
+
+                            </tr>";
+
+            }
+
+            else
+
+            {
+
+                    echo"<tr $bg><td height=16>
+
+                            &nbsp;
+
+                            <td height=16 width=63% >
+
+                            <a target=_blank href=\"". $config_path_image_upload ."/$file\">$file</a>
+
+
+
+                <td height=16 align=right>
+
+                            $img_info[0]x$img_info[1]
+
+
+
+                            <td height=16 align=right>
+
+                        &nbsp;". formatsize($this_size) ."
+
+                        <td width=70 height=16 align=right>
+                <input type=checkbox name=images[$file] value=\"$file\">
+
+                            </tr>";
+
+            }
+
+            }
+
+        }
+
+
+
+    if($i > 0){
+
+            echo"<tr ><td height=16>";
+
+
+                if($action != "quick"){
+                           echo" <td colspan=4 align=right>
+                   <br><input type=submit value='Delete Selected Images'>
+                            </tr>";
+
+                }
+
+            echo"<tr heigh=1>
+                <td  width=14>
+                &nbsp;
+                <td >
+                <br /><b>Total size</b>
+            <td>&nbsp;
+            <td align=right>
+
+                <br /><b>". formatsize($total_size) .'</b>
+
+                </tr>';
+
+        }
+
+    echo'
+   </table><input type=hidden name=action value=doimagedelete></form></table>';
+
+    if($action != "quick"){ echofooter(); }
+
+}
+
+// ********************************************************************************
+
+// Delete Image
+
+// ********************************************************************************
+
+elseif($action == "doimagedelete")
+
+{
+if(!isset($images)){         msg("info","No Images selected","You must select images to be deleted.", "$PHP_SELF?mod=images"); }
+//        if(!file_exists($config_path_image_upload."/".$image) or !$image){ msg("error","Error !!!","Could not delete image", "$PHP_SELF?mod=images"); }
+        foreach($images as $image){
+                unlink($config_path_image_upload."/".$image) or print("Could not delete image <b>$file</b>");
+        }
+        msg("info","Image(s) Deleted","The image was successfully deleted.", "$PHP_SELF?mod=images");
+
+}
+
+
+
+?>

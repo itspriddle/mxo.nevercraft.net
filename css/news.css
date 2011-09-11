@@ -1,0 +1,232 @@
+#news, #content {
+	width: 430px;	
+	float: left;
+	color: #506175;
+}
+#content .heading {
+	font-size: 13px;
+	font-weight: bold;
+}
+#login {
+	width: 80%;
+	position: relative;
+	left: 10%;
+}
+#news .top, #content .top {
+	width: 430px;
+	height: 12px;
+	background-image: url(/images/gui/v1.news.top.gif);
+	background-repeat: no-repeat;
+	background-position: bottom;
+}
+
+#members #news .top {
+	width: 430px;
+	height: 12px;
+	background-image: url(/images/gui/v1.mnews.top.gif);
+	background-repeat: no-repeat;
+	background-position: bottom;
+}
+
+#news .bottom, #content .bottom {
+	width: 430px;
+	height: 12px;
+	background-image: url(/images/gui/v1.news.bot.gif);
+	background-repeat: no-repeat;
+	background-position: top;
+}
+#members #news .bottom {
+	width: 430px;
+	height: 12px;
+	background-image: url(/images/gui/v1.mnews.bot.gif);
+	background-repeat: no-repeat;
+	background-position: top;
+	position: relative;
+	top: -1px;
+}
+#news .body, #content .body {
+	width: 430px;
+	background-image: url(/images/gui/v1.news.bg.gif);
+	background-repeat: repeat-y;
+	vertical-align: top;
+}
+
+#news .title_bg {
+	width: 348px;
+	height: 18px;
+	background-color: #B5C0CE;
+	border-bottom: 1px solid #506175;
+	float: right;
+	vertical-align: middle;
+	position: relative;
+	left: -2px;
+	
+}
+#content .title_bg {
+	width: 428px;
+	height: 18px;
+	background-color: #B5C0CE;
+	border-bottom: 1px solid #506175;
+	vertical-align: middle;
+	position: relative;
+	left: 1px;
+}
+#news .title, #content .title {
+	float: left;
+	font-size: 12px;
+	line-height: 18px;
+	font-weight: bold;
+	vertical-align: middle;
+	color: #506175;
+	text-transform: capitalize;
+	text-align: left;
+	position: relative;
+	left: 5px;
+
+}
+#news .story, #content .story {
+	font-weight: normal;
+	line-height: 1.5em;
+	color: #506175;
+	text-align: justify;
+	padding-top: 4px;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+#news .footer {
+	width: 428px;
+	height: 18px;
+	font-size: 10px;
+	line-height: 18px;
+	vertical-align: middle;
+	background-color: #B5C0CE;
+	border-top: 1px solid #506175;
+	border-bottom: 1px solid #506175;
+	color: #506175;
+	position: relative;
+	left: 1px;
+}
+#content .footer {
+	width: 428px;
+	height: 6px;
+	background-color: #B5C0CE;
+	border-top: 1px solid #506175;
+	border-bottom: 1px solid #506175;
+	color: #506175;
+	position: relative;
+	left: 1px;
+	display: block;
+	font-size: 1px;
+}
+#news .date {
+	float: left;
+	position: relative;
+	left: 4px;
+	text-align: left;
+}
+#news .postedby {
+	float: right;
+	text-align: right;
+	position: relative;
+	left: -4px;
+}
+#news .avatar {
+	width: 79px;
+	height: 97px;
+	float: left;
+	margin-right: 3px;
+	background-image: url(/images/avatars/avatar_blank.gif);
+	background-repeat: no-repeat;
+	background-position: top;
+	overflow: hidden;
+	position: relative;
+	left: 1px;
+	clear: right;
+	margin-bottom: 5px;
+}
+#news .feed {
+	float: right;
+	font-size: 10px;
+	position: relative;
+	left: -3px;
+	top: 1px;
+	color: #506175;
+	
+}
+#news br .div {
+	height: 5px;
+	font-size: 1px;
+
+}
+
+#secondary  {
+	width: 250px;	
+	float: right;
+	clear: none;
+	color: #506175;
+}
+#secondary .top {
+	width: 250px;
+	height: 12px;
+	background-image: url(/images/gui/v1.secondary.top.gif);
+	background-repeat: no-repeat;
+	background-position: bottom;
+}
+#secondary .bottom {
+	width: 250px;
+	height: 12px;
+	background-image: url(/images/gui/v1.secondary.bot.gif);
+	background-repeat: no-repeat;
+	background-position: top;
+}
+#secondary .body {
+	width: 250px;
+	background-image: url(/images/gui/v1.secondary.bg.gif);
+	background-repeat: repeat-y;
+	vertical-align: top;
+}
+
+#secondary .title_bg {
+	width: 248px;
+	height: 18px;
+	background-color: #B5C0CE;
+	border-bottom: 1px solid #506175;
+	vertical-align: middle;
+	position: relative;
+	left: 1px;
+	top: 0px;
+	
+}
+#secondary .title {
+	float: left;
+	font-size: 12px;
+	line-height: 18px;
+	font-weight: bold;
+	vertical-align: middle;
+	color: #506175;
+	text-transform: capitalize;
+	text-align: left;
+	position: relative;
+	left: 5px;
+
+}
+#secondary .story {
+	font-weight: normal;
+	line-height: 1.5em;
+	color: #506175;
+	text-align: justify;
+	padding: 5px;
+}
+#secondary .footer  {
+	width: 248px;
+	height: 6px;
+	background-color: #B5C0CE;
+	border-top: 1px solid #506175;
+	border-bottom: 1px solid #506175;
+	color: #506175;
+	position: relative;
+	left: 1px;
+	display: block;
+	font-size: 1px;
+
+}

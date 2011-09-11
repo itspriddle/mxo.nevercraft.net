@@ -1,0 +1,240 @@
+body {
+	font-family: Trebuchet MS, Verdana, Arial, sans-serif;
+	font-size: 11px;
+}
+.content {
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	line-height: 1.5em;
+}
+
+a:link {
+	color: #506175;
+	text-decoration: underline;
+}
+a:visited {
+	text-decoration: underline;
+	color: #506175;
+}
+a:hover {
+	text-decoration: none;
+	color: #506175;
+}
+a:active {
+	text-decoration: underline;
+	color: #506175;
+}
+
+/* Styles for News */
+.news_outline {
+	width: 430px;
+	float: left;
+	
+}
+.news_border {
+	width: 430px;
+	background-color: #506175;
+}
+.news_inner {
+	width: 428px;
+	background-color: #899DB4;
+	position: relative;
+	left: 1px;
+
+}
+.news_title_bg {
+	width: 349px;
+	height: 18px;
+	background-color: #B5C0CE;
+	border-bottom: 1px solid #506175;
+	float: right;
+	vertical-align: middle;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+.news_title {
+	font-size: 12px;
+	line-height: 18px;
+	font-weight: bold;
+	vertical-align: middle;
+	color: #506175;
+	text-transform: capitalize;
+	text-align: left;
+	float: left;
+	margin-left: 3px;
+
+}
+.news_story {
+	font-weight: normal;
+	line-height: 1.5em;
+	color: #506175;
+	text-align: justify;
+	padding-top: 21px;
+	padding-left: 4px;
+	padding-right: 4px;
+	
+	
+}
+.news_body {
+	width: 428;
+	min-height: 114px;
+
+}
+.news_footer {
+	margin-top: 3px;
+	width: 100%;
+	height: 18px;
+	font-size: 10px;
+	line-height: 18px;
+	vertical-align: middle;
+	background-color: #B5C0CE;
+	border-top: 1px solid #506175;
+	border-bottom: 1px solid #506175;
+	color: #506175;
+
+}
+.news_footer_date {
+	float: left;
+}
+.news_footer_postedby {
+	float: right;
+	text-align: right;
+}
+.news_top {
+	width: 430px;
+	height: 12px;
+	line-height: 12px;
+	font-size: 1px;
+	background-image: url(/images/gui/v1.news.top.gif);
+	background-repeat: no-repeat;
+	background-position: bottom;
+	
+}
+.news_bot {
+	width: 430px;
+	height: 12px;
+	background-image: url(/images/gui/v1.news.bot.gif);
+	background-repeat: no-repeat;
+	background-position: top;
+	line-height: 12px;
+	font-size: 1px;
+	margin-bottom: 16px;
+}
+.news_avatar {
+	width: 79px;
+	height: 97px;
+	float: left;
+	background-image: url(/images/avatars/avatar_blank.gif);
+	background-repeat: no-repeat;
+	margin-right: 3px;
+	overflow: hidden;
+}
+.news_feed_type {
+	float: right;
+	font-size: 10px;
+	margin-right: 3px;
+	font-weight: normal;
+	color: #506175;
+	line-height: 18px;
+	vertical-align: top;
+	
+}
+
+/* Secondary Styles */
+.secondary_body {
+	font-weight: normal;
+	line-height: 1.5em;
+	color: #506175;
+	text-align: justify;
+}
+
+.secondary_outline {
+	width: 250px;
+	float: right;
+	vertical-align: top;
+}
+.secondary_border {
+	width: 250px;
+	background-color: #506175;
+	border-bottom: 1px solid #506175;
+	vertical-align: top;
+}
+.secondary_inner {
+	width: 248px;
+	background-color: #899DB4;
+	position: relative;
+	left: 1px;
+}
+.secondary_title {
+	width: 248px;
+	height: 18px;
+	background-color: #B5C0CE;
+	border-bottom: 1px solid #506175;
+	border-top: 1px solid #506175;
+	float: right;
+	font-size: 12px;
+	line-height: 18px;
+	font-weight: bold;
+	vertical-align: bottom;
+	color: #506175;
+	text-transform: capitalize;
+}
+
+.secondary_top {
+	width: 250px;
+	height: 12px;
+	line-height: 12px;
+	font-size: 1px;
+	background-image: url(/images/gui/v1.sec.top.gif);
+	background-repeat: no-repeat;
+	background-position: bottom;
+}
+.secondary_bot {
+	width: 250px;
+	height: 12px;
+	line-height: 12px;
+	font-size: 1px;
+	background-image: url(/images/gui/v1.sec.bot.gif);
+	background-repeat: no-repeat;
+	margin-bottom: 8px;
+	background-position: top;
+}
+
+/* Padding */
+.padded_left_right {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.padded_left_right_top {
+	padding-top: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.padded_right {
+	padding-right: 5px;
+}
+.padded_left {
+	padding-left: 5px;
+}
+
+.padded {
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
+#disclaimer {
+	width: 690px;
+	height: 18px;
+	background-color: #B5C0CE; 
+	border: 1px solid #506175;
+	clear: both;
+
+}
+/* Others */
+.outline {
+	width: 685px;
+	vertical-align: top;
+}
